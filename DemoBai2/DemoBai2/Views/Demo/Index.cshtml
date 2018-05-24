@@ -1,0 +1,39 @@
+﻿@*@model DemoBai2.Models.HocSinh*@
+@model DemoBai2.Models.GiaoVien
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <div>
+        <form class="form-group" method="post" action="/Demo/Index">
+            Mã HS: <input class="form-control" type="text" name="txtMaHS" />
+            <br />
+            Họ Tên: <input class="form-control" type="text" name="txtHoTen" />
+            <br />
+            Mã GV: <input class="form-control" type="text" name="txtMaGV" />
+            <br />
+            Họ Tên GV: <input class="form-control" type="text" name="txtTenGV" />
+            <br />
+            <input type="submit" value="submit" />
+        </form>
+        @if (Model !=null)
+        {
+            <h1>Xuất thông tin</h1>
+            <form class="form-group">
+                
+                Mã GV: <input class="form-control" value="@Model.MaGV" />
+                Tên GV: <input class="form-control" value="@Model.TenGV" />
+            </form>
+        }
+    </div>
+</body>
+</html>
