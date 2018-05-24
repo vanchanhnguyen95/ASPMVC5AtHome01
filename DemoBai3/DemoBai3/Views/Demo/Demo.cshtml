@@ -1,0 +1,72 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demo</title>
+</head>
+<body>
+    <div>
+        <h1>Học các thẻ razor</h1>
+        @* Tạo thẻ Form *@
+        @using (Html.BeginForm("Demo", "Demo"))
+        {
+            //Tạo thẻ textbox
+            //Thẻ input{type=text}
+            <span>Thẻ textbox</span>
+            @Html.TextBox("txtHoTen", "text", new { @id = "id1" })
+            <br />
+
+            //Thẻ textArea
+            <span>Thẻ textarea</span>
+            @Html.TextArea("txtDiaChi", new { @cols = "10", @rows = "5" })
+            <br />
+
+            //Thẻ password
+            <span>Thẻ password</span>
+            @Html.Password("passwordname", "giatrivalue", new { @id = "passwordid" })
+            <br />
+
+            //Thẻ actionlink
+            <span>Thẻ actionlink</span>
+            @Html.ActionLink("stringtext", "Index", "Demo", new { @thamso = "thamso" }, new { @id = "id", @class = "class" })
+            <br />
+
+            //Thẻ Hidden
+            <span>Thẻ Hidden</span>
+            @Html.Hidden("txtHidden", "123")
+            <br />
+
+            //Thẻ radiobutton
+            <span>Thẻ radiobutton</span>
+            @Html.RadioButton("GioiTinh", 0, true) <span>Nam</span>
+            @Html.RadioButton("GioiTinh", 0, false) <span>Nữ</span>
+            <br />
+
+            //Thẻ Checkbox
+            <span>Thẻ checkbox</span>
+            @Html.CheckBox("TheThao", true, new { @value = "abc" }) <span>Thể Thao</span>
+            @Html.CheckBox("DuLich", true, new { @value = "abc" })<span>Du lịch</span>
+            @Html.CheckBox("ChoiGame", true, new { @value = "abc" })<span>Chơi game</span>
+            <br />
+
+
+            //Tạo 1 droplist. thẻ select ontipn
+            <span>Thẻ Select option</span>
+            SelectList TinhThanhP = (SelectList)ViewBag.TinhThanhPho;
+            <span>Thẻ select option:</span>@Html.DropDownList("TenDDL", TinhThanhP, new { id = "tagSelection" });
+            <br />
+            <span>Thẻ list box</span>
+            <span>Thẻ select option:</span>@Html.ListBox("TenDDL", TinhThanhP, new { id ="tagSelection"});
+
+            <br />
+            <input type="submit" />
+        }
+
+    </div>
+</body>
+</html>
