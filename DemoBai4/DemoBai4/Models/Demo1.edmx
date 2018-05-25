@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QUANLYNHANVIENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="MA_NV" />
+          </Key>
+          <Property Name="MA_NV" Type="int" Nullable="false" />
+          <Property Name="TEN_NV" Type="varchar" MaxLength="50" />
+          <Property Name="DIA_CHI" Type="varchar" MaxLength="150" />
+          <Property Name="SO_DIEN_THOAI" Type="varchar" MaxLength="20" />
+          <Property Name="MA_PB" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHONGBAN">
+          <Key>
+            <PropertyRef Name="MA_PB" />
+          </Key>
+          <Property Name="MA_PB" Type="int" Nullable="false" />
+          <Property Name="TEN_PB" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_NHANVIEN_PHONGBAN">
+          <End Role="PHONGBAN" Type="Self.PHONGBAN" Multiplicity="1" />
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGBAN">
+              <PropertyRef Name="MA_PB" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="MA_PB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QUANLYNHANVIENModelStoreContainer">
+          <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHONGBAN" EntityType="Self.PHONGBAN" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_NHANVIEN_PHONGBAN" Association="Self.FK_NHANVIEN_PHONGBAN">
+            <End Role="PHONGBAN" EntitySet="PHONGBAN" />
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QUANLYNHANVIENModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="MA_NV" />
+          </Key>
+          <Property Name="MA_NV" Type="Int32" Nullable="false" />
+          <Property Name="TEN_NV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SO_DIEN_THOAI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MA_PB" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PHONGBAN" Relationship="Self.FK_NHANVIEN_PHONGBAN" FromRole="NHANVIEN" ToRole="PHONGBAN" />
+        </EntityType>
+        <EntityType Name="PHONGBAN">
+          <Key>
+            <PropertyRef Name="MA_PB" />
+          </Key>
+          <Property Name="MA_PB" Type="Int32" Nullable="false" />
+          <Property Name="TEN_PB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NHANVIENs" Relationship="Self.FK_NHANVIEN_PHONGBAN" FromRole="PHONGBAN" ToRole="NHANVIEN" />
+        </EntityType>
+        <Association Name="FK_NHANVIEN_PHONGBAN">
+          <End Role="PHONGBAN" Type="Self.PHONGBAN" Multiplicity="1" />
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGBAN">
+              <PropertyRef Name="MA_PB" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="MA_PB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QUANLYNHANVIENEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+          <EntitySet Name="PHONGBANs" EntityType="Self.PHONGBAN" />
+          <AssociationSet Name="FK_NHANVIEN_PHONGBAN" Association="Self.FK_NHANVIEN_PHONGBAN">
+            <End Role="PHONGBAN" EntitySet="PHONGBANs" />
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QUANLYNHANVIENModelStoreContainer" CdmEntityContainer="QUANLYNHANVIENEntities">
+          <EntitySetMapping Name="NHANVIENs">
+            <EntityTypeMapping TypeName="QUANLYNHANVIENModel.NHANVIEN">
+              <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
+                <ScalarProperty Name="TEN_NV" ColumnName="TEN_NV" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="SO_DIEN_THOAI" ColumnName="SO_DIEN_THOAI" />
+                <ScalarProperty Name="MA_PB" ColumnName="MA_PB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHONGBANs">
+            <EntityTypeMapping TypeName="QUANLYNHANVIENModel.PHONGBAN">
+              <MappingFragment StoreEntitySet="PHONGBAN">
+                <ScalarProperty Name="MA_PB" ColumnName="MA_PB" />
+                <ScalarProperty Name="TEN_PB" ColumnName="TEN_PB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

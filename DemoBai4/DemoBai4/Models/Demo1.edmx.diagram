@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="479752a22ae74c1db19fd5868baca258" Name="Diagram1">
+        <EntityTypeShape EntityType="QUANLYNHANVIENModel.NHANVIEN" Width="1.5" PointX="4.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYNHANVIENModel.PHONGBAN" Width="1.5" PointX="1.125" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="QUANLYNHANVIENModel.FK_NHANVIEN_PHONGBAN" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
