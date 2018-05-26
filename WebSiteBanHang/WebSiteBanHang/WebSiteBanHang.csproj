@@ -228,8 +228,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\QuanLyBanHangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QuanLyBanHangModel.Context.cs</LastGenOutput>
       <DependentUpon>QuanLyBanHangModel.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBanHangModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\QuanLyBanHangModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -259,7 +259,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -269,6 +271,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\KhachHang\Index.cshtml" />
     <Content Include="Views\KhachHang\Index1.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\KhachHang\TruyVan1DoiTuong.cshtml" />
+    <Content Include="Views\KhachHang\SortDuLieu.cshtml" />
+    <Content Include="Views\KhachHang\GroupDuLieu.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
