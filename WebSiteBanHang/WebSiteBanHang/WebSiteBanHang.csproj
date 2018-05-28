@@ -228,6 +228,7 @@
     <Content Include="Content\css\flexslider.css" />
     <Content Include="Content\css\memenu.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style_form_dang_nhap.css" />
     <Content Include="Content\images\1.jpg" />
     <Content Include="Content\images\b1.jpg" />
     <Content Include="Content\images\b2.jpg" />
