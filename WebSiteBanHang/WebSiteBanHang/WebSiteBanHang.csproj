@@ -156,6 +156,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DemoCssController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Global.asax.cs">
@@ -237,6 +238,7 @@
     <Content Include="Content\images\cart.png" />
     <Content Include="Content\images\close_1.png" />
     <Content Include="Content\images\co.png" />
+    <Content Include="Content\images\download.png" />
     <Content Include="Content\images\img-sprite.png" />
     <Content Include="Content\images\lo.png" />
     <Content Include="Content\images\lo1.png" />
@@ -330,6 +332,7 @@
     <Content Include="Views\KhachHang\GroupDuLieu.cshtml" />
     <Content Include="Views\Layout\HomeLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\DemoCss\Demo.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

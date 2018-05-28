@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Demo";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<div class="container" id="Content">
+    @* Sử dụng boostrap
+        md: dùng cho những
+        xs: dùng cho điện thoại di động
+        sm:dùng cho máy bảng
+    *@
+    <h1>Danh sách logo</h1>
+    <div class="row">
+        <div class="col-md-2">
+            
+            <div class="logocot1">
+                <span class="title">Home</span>
+            </div>
+        </div>
+        <div class="col-md-2">
+            
+            <div class="logocot1">
+                <span class="title">Home</span>
+            </div>
+        </div>
+        <div class="col-md-2">
+            
+            <div class="logocot1">
+                <span class="title">Home</span>
+            </div>
+        </div>
+        <div class="col-md-2">
+            
+            <div class="logocot1">
+                <span class="title">Home</span>
+            </div>
+        </div>
+        <div class="col-md-2">
+            
+            <div class="logocot1">
+                <span class="title">Home</span>
+            </div>
+        </div>
+        <div class="col-md-2">
+
+            <div class="logocot1">
+                <span class="title">Home</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Css *@
+<style>
+    #Content {
+        height: 500px;
+    }
+    .title {
+        font-size: 15pt;
+        font-family: 'Segoe UI';
+        font-weight: bold;
+        color: white;
+        margin-top: 30px;
+        transition: 0.2s;
+    }
+    .logocot1 {
+        height: 100px;
+        background-color: green;
+        background-image: url(../../Content/images/download.png);
+        background-repeat: no-repeat;
+        background-position:center right;
+        padding-top: 35px;
+        padding-left: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+        
+       }
+        .logocot1:hover {
+            height: 100px;
+            background-color: red;
+            background-image: url(../../Content/images/download.png);
+            background-repeat: no-repeat;
+            background-position: 10px 35px;
+            padding-top: 0px;
+            padding-left: 10px;
+            transition: 0.5s;
+            /*opacity: 0.5;*/
+            box-shadow: inset 5px 5px 10px white, inset -5px -5px 10px white;
+        }
+</style>
